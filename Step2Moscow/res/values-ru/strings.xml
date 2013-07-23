@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menuItem1">Cлучайный маршрут</string>
+    <string name="menuItem2">Продолжить маршрут</string>
+    <string name="menuItem3">Расширенный поиск</string>
+</resources>

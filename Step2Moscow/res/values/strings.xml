@@ -1,0 +1,10 @@
+<resources>
+
+	<string name="app_name">Step2Moscow</string>
+	<string name="hello_world">Hello world!</string>
+	<string name="menu_settings">Settings</string>
+    <string name="menuItem1">Cлучайный маршрут</string>
+    <string name="menuItem2">Продолжить маршрут</string>
+    <string name="menuItem3">Расширенный поиск</string>
+
+</resources>
