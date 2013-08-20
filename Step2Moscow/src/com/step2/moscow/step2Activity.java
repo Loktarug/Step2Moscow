@@ -1,10 +1,12 @@
 
 package com.step2.moscow;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.view.View;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.ActionBar.Tab;
 import com.actionbarsherlock.app.ActionBar.TabListener;
@@ -19,6 +21,8 @@ public class step2Activity
 
     private String[] locations;
     private ViewPager pager;
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,13 +47,29 @@ public class step2Activity
 
     private void configureActionBar() {
         getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-        for (String location: locations) {
+        ActionBar actionBar = getSupportActionBar();
+        /*for (String location: locations) {
             Tab tab = getSupportActionBar().newTab();
             tab.setCustomView(R.layout.menu_item1);
             tab.setText(location);
             tab.setTabListener(this);
             getSupportActionBar().addTab(tab);
-        }
+        }*/
+
+        Tab tab = getSupportActionBar().newTab();
+        tab.setCustomView(R.layout.menu_item1);
+        tab.setTabListener(this);
+        getSupportActionBar().addTab(tab);
+
+        Tab tab1 = getSupportActionBar().newTab();
+        tab1.setCustomView(R.layout.menu_item2);
+        tab1.setTabListener(this);
+        getSupportActionBar().addTab(tab1);
+
+        Tab tab2 = getSupportActionBar().newTab();
+        tab2.setCustomView(R.layout.menu_item3);
+        tab2.setTabListener(this);
+        getSupportActionBar().addTab(tab2);
     }
 
     @Override
