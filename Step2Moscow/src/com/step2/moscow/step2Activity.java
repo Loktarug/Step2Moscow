@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.TextView;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.ActionBar.Tab;
 import com.actionbarsherlock.app.ActionBar.TabListener;
@@ -29,7 +31,7 @@ public class step2Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         locations = getResources().getStringArray(R.array.locations);
-        pager = ((ViewPager) findViewById(R.id.pager));
+        pager = ((ViewPager) findViewById(R.id.main));
         configureViewPager();
         configureActionBar();
     }
@@ -47,29 +49,23 @@ public class step2Activity
 
     private void configureActionBar() {
         getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-        ActionBar actionBar = getSupportActionBar();
-        /*for (String location: locations) {
+        //ActionBar actionBar = getSupportActionBar();
+        //View view1 = actionBar.getCustomView();
+        for (String location: locations) {
             Tab tab = getSupportActionBar().newTab();
-            tab.setCustomView(R.layout.menu_item1);
+
+            /*LayoutInflater inflater = LayoutInflater.from(this);
+            View customView = inflater.inflate(R.layout.menu_item, null);
+            TextView titleTV = (TextView) customView.findViewById(R.id.custom_tab_title);
+            titleTV.setText(location);
+
+            tab.setCustomView(customView);  */
             tab.setText(location);
             tab.setTabListener(this);
             getSupportActionBar().addTab(tab);
-        }*/
 
-        Tab tab = getSupportActionBar().newTab();
-        tab.setCustomView(R.layout.menu_item1);
-        tab.setTabListener(this);
-        getSupportActionBar().addTab(tab);
+        }
 
-        Tab tab1 = getSupportActionBar().newTab();
-        tab1.setCustomView(R.layout.menu_item2);
-        tab1.setTabListener(this);
-        getSupportActionBar().addTab(tab1);
-
-        Tab tab2 = getSupportActionBar().newTab();
-        tab2.setCustomView(R.layout.menu_item3);
-        tab2.setTabListener(this);
-        getSupportActionBar().addTab(tab2);
     }
 
     @Override
